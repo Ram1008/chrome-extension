@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "LinkedIn Profile Image Changer",
+    "version": "1.0",
+    "description": "Changes LinkedIn profile images to a dummy image.",
+    "permissions": [
+      "activeTab",
+      "declarativeContent"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.linkedin.com/*"],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "icons": {
+      "48": "dummy_profile.png"
+    },
+    "web_accessible_resources": [
+      {
+        "resources": ["dummy_profile.png"],
+        "matches": ["*://www.linkedin.com/*"]
+      }
+    ]
+  }
+  
